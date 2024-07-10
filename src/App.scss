@@ -1,0 +1,195 @@
+.showcase {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  padding: 100px 0;
+  .info {
+    width: 60%;
+    h1 {
+      font-family: "Chakra Petch";
+      font-size: 48px;
+      width: 80%;
+      font-weight: 600;
+    }
+    p {
+      font-size: 18px;
+      width: 70%;
+    }
+  }
+}
+.about {
+  width: 90%;
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-between;
+  background: #000;
+  color: white;
+  padding: 30px;
+  border-radius: 20px;
+  h1 {
+    font-size: 40px;
+    font-family: "Chakra Petch";
+    font-weight: 600;
+  }
+  .card {
+    width: 400px;
+    color: black;
+    padding: 30px;
+    font-size: 20px;
+  }
+  .edu {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    h3 {
+      font-size: 25px;
+      font-weight: 500;
+      font-family: "Josefin Sans";
+    }
+    .prog {
+      color: white;
+      background: #555555;
+      .flex {
+        background: white;
+      }
+    }
+  }
+}
+.projects {
+  width: 90%;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  h1 {
+    font-size: 40px;
+    font-family: "Chakra Petch";
+    font-weight: 600;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    .card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      h3 {
+        font-size: 20px;
+        font-weight: 500;
+        font-family: "Josefin Sans";
+      }
+      p {
+        font-size: 15px;
+        color: #555555;
+      }
+    }
+  }
+}
+.contact {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  h1 {
+    font-family: "Chakra Petch";
+    font-size: 40px;
+    font-weight: 600;
+  }
+  
+  .low {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .info {
+      h2 {
+        font-family: "Josefin Sans";
+        font-size: 20px;
+      }
+      ul {
+        li {
+          a {
+            i {
+              display: block;
+              width: 30px;
+              height: 30px;
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+    .tgbot {
+      width: 50%;
+      h2 {
+        font-family: "Josefin Sans";
+        font-size: 20px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        input {
+          padding: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:768px){
+  .showcase{
+    flex-direction: column;
+    padding: 30px;
+    .info{
+      width: 100%;
+      text-align: center;
+      h1{
+        width: 100%;
+        font-size: 36px;
+      }
+      p{
+        width: 100%;
+        font-size: 15px;
+      }
+    }
+    .photo{
+      margin: 0 auto;
+    }
+  }
+  .about{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
+    .lll{
+        align-items: center;
+        .card{
+          width: 100%;
+      }
+    }
+    .edu{
+      width: 100%;
+    }
+  }
+  .projects{
+    .grid{
+     grid-template-columns: 1fr 1fr;
+    }
+  }
+  .contact{
+    padding: 20px 0;
+    .low{
+      flex-direction: column;
+      align-items: center;
+      .info{
+        width: 100%;
+      }
+      .tgbot{
+        width: 100%;
+      }
+    }
+  }
+
+}

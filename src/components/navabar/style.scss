@@ -1,0 +1,47 @@
+.nav{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    h1{
+        font-size: 48px;
+        font-family: 'Josefin Sans';
+
+    }
+    ul{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        font-family: 'Josefin Sans';
+        font-size: 20px;
+    }
+    .llo{
+        display: none;
+    }
+    .small{
+        flex-direction: column;
+        align-items: start;
+    }
+    
+}
+
+
+@media(max-width:768px){
+   .nav{
+    .llo{
+        display: block;
+    }
+    button{
+        display: none;
+    }
+    ul{
+        display: none;
+    }
+    .small{
+        display: block;
+    }
+   }
+}
