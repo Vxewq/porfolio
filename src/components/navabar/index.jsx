@@ -3,9 +3,14 @@ import {
   Button,
   Typography,
   IconButton,
+  Select,
+  Option,
+  navbar,
 } from "@material-tailwind/react";
 import "./style.scss";
-import React from "react";
+import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import Switcher from "../switcher";
 
 export default function Navbar() {
   const [open, setOpen] = React.useState(false);
@@ -13,45 +18,54 @@ export default function Navbar() {
   const openDrawer = () => setOpen(true);
   const closeDrawer = () => setOpen(false);
 
+  const { t } = useTranslation("navbar");
+
   return (
     <div className="nav">
       <h1>Portfolio</h1>
 
-      <ul>
+      <ul className="l1">
         <li>
-          <a href="#">Home</a>
+          <a href="#home">{t("li1")}</a>
         </li>
         <li>
-          <a href="#">About</a>
+          <a href="#about">{t("li2")}</a>
         </li>
         <li>
-          <a href="#">Projects</a>
+          <a href="#projects">{t("li3")}</a>
         </li>
         <li>
-          <a href="#">Contact</a>
-        </li>
-      </ul>
-      <React.Fragment>
-      <Button className="llo" variant="outlined" onClick={openDrawer}>menu</Button>
-      <Drawer open={open} onClose={closeDrawer} className="p-4">
-      <ul className="small">
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#">About</a>
-        </li>
-        <li>
-          <a href="#">Projects</a>
-        </li>
-        <li>
-          <a href="#">Contact</a>
+          <a href="#contact">{t("li4")}</a>
         </li>
       </ul>
-      </Drawer>
-      </React.Fragment>
+      <div className="w-[150px] sm:hidden  md:block">
+        <Switcher />
+      </div>
 
-      <Button variant="outlined">Hire Me</Button>
+      <React.Fragment>
+        <Button className="llo" variant="outlined" onClick={openDrawer}>
+          menu
+        </Button>
+        <Drawer open={open} onClose={closeDrawer} className="p-4">
+          <ul className="small">
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Projects</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+            <li>
+              <Switcher />
+            </li>
+          </ul>
+        </Drawer>
+      </React.Fragment>
     </div>
   );
 }

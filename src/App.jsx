@@ -22,6 +22,7 @@ import React, { useState } from "react";
 import Footer from "./components/footer";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useTranslation } from "react-i18next";
 
 export default function App() {
   const [names, setName] = useState("");
@@ -52,52 +53,48 @@ export default function App() {
   const { countries } = useCountries();
   const [country, setCountry] = React.useState(0);
   const { name, flags, countryCallingCode } = countries[country];
+
+  const { t } = useTranslation("home");
+
   return (
     <>
       <Navbar />
-      <div className="showcase">
+      <div className="showcase" id="home">
         <div className="info">
-          <h1>
-            Hello, My name is Shoxrux Rahmatullayev. I'm an intern Front-End
-            Developer
-          </h1>
-          <p>
-            I am Shoxrux Rahmatullayev. I'm an intern Front-End Developer based
-            in Tashkent, Uzbekistan. I have not much of expierence in big
-            projects yet but i have my own.
-          </p>
+          <h1>{t("h1")}</h1>
+          <p>{t("p")}</p>
         </div>
         <div className="photo">
           <img src="" alt="My photo" />
         </div>
       </div>
-      <div className="about">
+      <div className="about" id="about">
         <div className="lll">
-          <h1 id="about">About Me</h1>
+          <h1 id="about">{t("aboutTitle")}</h1>
           <Card className="card">
             <table>
               <tr>
-                <th>First Name</th>
+                <th>{t("b")}</th>
                 <td>Shoxrux</td>
               </tr>
               <tr>
-                <th>Last Name</th>
+                <th>{t("b2")}</th>
                 <td>Rahmatullayev</td>
               </tr>
               <tr>
-                <th>Age</th>
+                <th>{t("b3")}</th>
                 <td>15</td>
               </tr>
             </table>
           </Card>
         </div>
         <div className="edu">
-          <h1>Education</h1>
+          <h1>{t("Edu")}</h1>
           <h3>CoddyCamp Front-End Developer course:</h3>
           <Progress className="prog" size="lg" value={92} />
         </div>
         <Button onClick={handleOpen} variant="outlined" color="white">
-          skills
+          {t("aboutButton")}
         </Button>
         <Dialog open={open} handler={handleOpen}>
           <DialogHeader>Skills</DialogHeader>
@@ -171,8 +168,8 @@ export default function App() {
           </DialogFooter>
         </Dialog>
       </div>
-      <div className="projects">
-        <h1>My Projects:</h1>
+      <div className="projects" id="projects">
+        <h1>{t('projectTitle')}</h1>
         <div className="grid">
           <a href="https://projectvw1.netlify.app/">
             <div className="card">
@@ -180,8 +177,7 @@ export default function App() {
               <div className="txt">
                 <h3>Al-Chiroq</h3>
                 <p>
-                  Honestly It's not my project but i saw it'd be good if i
-                  recreate it.{" "}
+                  {t('prjDesc1')}
                 </p>
               </div>
             </div>
@@ -191,17 +187,17 @@ export default function App() {
               <img src="/porche.png" alt="" />
               <div className="txt">
                 <h3>Porsche</h3>
-                <p>Same with the last project. </p>
+                <p>{t("prjDesc2")} </p>
               </div>
             </div>
           </a>
         </div>
       </div>
-      <div className="contact">
-        <h1>Contact me:</h1>
+      <div className="contact" id="contact">
+        <h1>{t("contactTitle")}</h1>
         <div className="low">
           <div className="info">
-            <h2>Me in Social Media:</h2>
+            <h2>{t('social')}</h2>
             <ul className="flex m-4 text-2xl gap-4">
               <li>
                 <a href="https://www.linkedin.com/in/shohruh-rahmatullayev-9762b9315/">
@@ -221,11 +217,11 @@ export default function App() {
             </ul>
           </div>
           <div className="tgbot">
-            <h2>Text Me:</h2>
+            <h2>{t("heart")}</h2>
             <form onSubmit={() => sendMessage()}>
               <Input
                 onChange={(e) => setName(e.target.value)}
-                value={name}
+                // value={name}
                 type="text"
                 label="Name"
               />
@@ -239,7 +235,7 @@ export default function App() {
                       className="flex h-10 items-center gap-2 rounded-r-none border border-r-0 border-blue-gray-200 bg-blue-gray-500/10 pl-3"
                     >
                       <img
-                        src={'https://flagcdn.com/uz.svg'}
+                        src={"https://flagcdn.com/uz.svg"}
                         alt={name}
                         className="h-4 w-4 rounded-full object-cover"
                       />
@@ -247,21 +243,19 @@ export default function App() {
                     </Button>
                   </MenuHandler>
                   <MenuList className="max-h-[20rem] max-w-[18rem]">
-                  <MenuItem
-                            value={'Uzbekistan'}
-                            className="flex items-center gap-2"
-                            onClick={() => setCountry(index)}
-                          >
-                            <img
-                              src={flags.svg}
-                              alt={name}
-                              className="h-5 w-5 rounded-full object-cover"
-                            />
-                            {name}{" "}
-                            <span className="ml-auto">
-                              {countryCallingCode}
-                            </span>
-                          </MenuItem>
+                    <MenuItem
+                      value={"Uzbekistan"}
+                      className="flex items-center gap-2"
+                      onClick={() => setCountry(index)}
+                    >
+                      <img
+                        src={flags.svg}
+                        alt={name}
+                        className="h-5 w-5 rounded-full object-cover"
+                      />
+                      {name}{" "}
+                      <span className="ml-auto">{countryCallingCode}</span>
+                    </MenuItem>
                   </MenuList>
                 </Menu>
                 <Input
@@ -285,7 +279,7 @@ export default function App() {
                 label="Your Message"
               />
               <Button onClick={() => sendMessage()} variant="outlined">
-                Send
+                {t('sendButton')}
               </Button>
               <ToastContainer
                 position="top-right"
