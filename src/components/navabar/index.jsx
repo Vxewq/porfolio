@@ -38,9 +38,7 @@ export default function Navbar() {
           <a href="#contact">{t("li4")}</a>
         </li>
       </ul>
-      <div className="w-[150px] sm:hidden  md:block">
         <Switcher />
-      </div>
 
       <React.Fragment>
         <Button className="llo" variant="outlined" onClick={openDrawer}>
