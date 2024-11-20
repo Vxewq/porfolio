@@ -1,7 +1,18 @@
-html{
+html {
   scroll-behavior: smooth;
 }
-
+body {
+  animation: fadeIn 1s ease-in-out;
+  animation-delay: 2500ms;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 
 .showcase {
@@ -22,6 +33,11 @@ html{
       font-size: 18px;
       width: 70%;
     }
+  }
+  img {
+    width: 70%;
+    border: 2px solid red;
+    border-radius: 10px;
   }
 }
 .about {
@@ -104,7 +120,7 @@ html{
     font-size: 40px;
     font-weight: 600;
   }
-  
+
   .low {
     display: flex;
     flex-direction: row;
@@ -145,57 +161,57 @@ html{
   }
 }
 
-@media(max-width:768px){
-  .showcase{
+@media (max-width: 768px) {
+  .showcase {
     flex-direction: column;
     padding: 30px;
-    .info{
+    .info {
       width: 100%;
       text-align: center;
-      h1{
+      h1 {
         width: 100%;
         font-size: 36px;
       }
-      p{
+      p {
         width: 100%;
         font-size: 15px;
       }
     }
-    .photo{
+    .photo {
       margin: 0 auto;
+      display: none;
     }
   }
-  .about{
+  .about {
     flex-direction: column;
     align-items: stretch;
     gap: 30px;
-    .lll{
-        align-items: center;
-        .card{
-          width: 100%;
+    .lll {
+      align-items: center;
+      .card {
+        width: 100%;
       }
     }
-    .edu{
+    .edu {
       width: 100%;
     }
   }
-  .projects{
-    .grid{
-     grid-template-columns: 1fr 1fr;
+  .projects {
+    .grid {
+      grid-template-columns: 1fr 1fr;
     }
   }
-  .contact{
+  .contact {
     padding: 20px 0;
-    .low{
+    .low {
       flex-direction: column;
       align-items: center;
-      .info{
+      .info {
         width: 100%;
       }
-      .tgbot{
+      .tgbot {
         width: 100%;
       }
     }
   }
-
 }
