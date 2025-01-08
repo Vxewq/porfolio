@@ -22,7 +22,7 @@ export default function Navbar() {
 
   return (
     <div className="nav">
-      <h1>Portfolio</h1>
+      <h1>S.Rahmatullayev</h1>
 
       <ul className="l1">
         <li>

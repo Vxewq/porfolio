@@ -24,8 +24,25 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useTranslation } from "react-i18next";
 import AnimatedCursor from "react-animated-cursor";
+import {
+  DiHtml5,
+  DiCss3,
+  DiSass,
+  DiBootstrap,
+  DiJavascript1,
+  DiReact,
+  DiNodejsSmall,
+  DiMongodb,
+  DiGithubBadge,
+} from "react-icons/di";
+import { FaNodeJs } from "react-icons/fa";
+import { SiNestjs, SiExpress, SiTypescript, SiAxios } from "react-icons/si";
+import { IoLogoGithub } from "react-icons/io";
 
 export default function App() {
+  //icons
+
+  // for tg message
   const [names, setName] = useState("");
   const [mes, setMes] = useState("");
   const [num, setNumber] = useState("");
@@ -47,7 +64,7 @@ export default function App() {
       .then((j) => j.json())
       .then(() => toast.success("Succesfully sended"));
   }
-
+  // for responsive
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => setOpen(!open);
@@ -60,135 +77,155 @@ export default function App() {
   const [animation, setAnimation] = useState(true);
   useEffect(() => {
     const timer = setTimeout(() => {
-      setAnimation(false); // After 4 seconds, hide the video
-    }, 2500);
+      setAnimation(false);
+    }, 1000);
 
-    // Cleanup timer when the component is unmounted
     return () => clearTimeout(timer);
-  }, []); // Empty dependency array to ensure this runs once on mount
+  }, []);
+
+  // i love kanye west !!!!
+  const skills = [
+    {
+      category: "Front-End",
+      technologies: [
+        {
+          name: "HTML",
+          icon: <DiHtml5 className="text-green-600 text-3xl" />,
+        },
+        { name: "CSS", icon: <DiCss3 className="text-green-600 text-3xl" /> },
+        { name: "Sass", icon: <DiSass className="text-green-600 text-3xl" /> },
+        {
+          name: "Bootstrap",
+          icon: <DiBootstrap className="text-green-600 text-3xl" />,
+        },
+        {
+          name: "JavaScript",
+          icon: <DiJavascript1 className="text-green-500 text-3xl" />,
+        },
+        { name: "React", icon: <DiReact className="text-green-500 text-3xl" /> },
+        {
+          name: "Tailwind CSS",
+          icon: <span className="text-green-500 text-3xl">T</span>,
+        }, // Tailwind doesn't have a direct icon
+        {
+          name: "Material-Tailwind",
+          icon: <span className="text-green-500 text-3xl">MT</span>,
+        },
+        {
+          name: "Ant Design (AntD)",
+          icon: <span className="text-green-600 text-3xl">A</span>,
+        },
+        {
+          name: "UIkit",
+          icon: <span className="text-green-600 text-3xl">UI</span>,
+        },
+        {
+          name: "AOS",
+          icon: <span className="text-green-400 text-3xl">A</span>,
+        },
+      ],
+    },
+    {
+      category: "Back-End",
+      technologies: [
+        {
+          name: "Node.js",
+          icon: <FaNodeJs className="text-green-500 text-3xl" />,
+        },
+        {
+          name: "Nest.js",
+          icon: <SiNestjs className="text-green-600 text-3xl" />,
+        },
+        {
+          name: "Express",
+          icon: <SiExpress className="text-green-600 text-3xl" />,
+        },
+        {
+          name: "TypeScript",
+          icon: <SiTypescript className="text-green-600 text-3xl" />,
+        },
+        {
+          name: "MongoDB",
+          icon: <DiMongodb className="text-green-600 text-3xl" />,
+        },
+        {
+          name: "Mongoose",
+          icon: <span className="text-green-600 text-3xl">M</span>,
+        },
+        { name: "Axios", icon: <SiAxios className="text-green-600 text-3xl" /> },
+      ],
+    },
+    {
+      category: "Tools",
+      technologies: [
+        { name: "Git", icon: <IoLogoGithub className="text-black text-3xl" /> },
+        {
+          name: "GitHub",
+          icon: <DiGithubBadge className="text-gray-600 text-3xl" />,
+        },
+        {
+          name: "React Hook Form",
+          icon: <span className="text-green-600 text-3xl">RH</span>,
+        },
+      ],
+    },
+  ];
 
   return (
     <>
-      <AnimatedCursor color="0,0,10" />
+      <AnimatedCursor color="255,255,255" />
 
       {animation ? (
         <video
-          src="./src/assets/intro.mp4"
+          src="../src/assets/intro.mp4"
           autoPlay
           muted
           style={{ width: "100%", height: "auto" }}
         ></video>
       ) : (
         <>
-          <Navbar />
-          <div className="showcase" id="home">
-            <div className="info">
-              <h1>{t("h1")}</h1>
-              <p>{t("p")}</p>
-            </div>
-            <div className="photo">
-              <img src="/White pfp.jpg" alt="My photo" />
+          <div className="container-showcase">
+            <Navbar />
+            <div className="showcase" id="home">
+              <div className="info">
+                <h1>{t("h1")}</h1>
+                <p>{t("p")}</p>
+              </div>
             </div>
           </div>
+
           <div className="about" id="about">
-            <div className="lll">
-              <h1 id="about">{t("aboutTitle")}</h1>
-              <Card className="card">
-                <table>
-                  <tr>
-                    <th>{t("b")}</th>
-                    <td>Shoxrux</td>
-                  </tr>
-                  <tr>
-                    <th>{t("b2")}</th>
-                    <td>Rahmatullayev</td>
-                  </tr>
-                  <tr>
-                    <th>{t("b3")}</th>
-                    <td>15</td>
-                  </tr>
-                </table>
-              </Card>
-            </div>
-            <div className="edu">
-              <h1>{t("Edu")}</h1>
-              <h3>CoddyCamp Front-End Developer course:</h3>
-              <Progress className="prog" size="lg" value={92} />
-            </div>
-            <Button onClick={handleOpen} variant="outlined" color="white">
-              {t("aboutButton")}
-            </Button>
-            <Dialog open={open} handler={handleOpen}>
-              <DialogHeader>Skills</DialogHeader>
-              <DialogBody className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-                <Card className="p-4 flex flex-col align-center">
-                  <h1>JS</h1>
-                  <Progress value={60} />
-                </Card>
-                <Card className="p-4 flex flex-col align-center">
-                  <h1>HTML</h1>
-                  <Progress value={80} />
-                </Card>
-                <Card className="p-4 flex flex-col align-center">
-                  <h1>CSS</h1>
-                  <Progress value={90} />
-                </Card>
-                <Card className="p-4 flex flex-col align-center">
-                  <h1>SCSS</h1>
-                  <Progress value={90} />
-                </Card>
-                <Card className="p-4 flex flex-col align-center">
-                  <h1>REACT</h1>
-                  <Progress value={90} />
-                </Card>
-              </DialogBody>
-              <DialogHeader>Libraries & FrameWorks</DialogHeader>
-              <DialogBody className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-                <Card className="p-4 flex flex-col align-center">
-                  <h1>Tailwind</h1>
-                  <Progress value={60} />
-                </Card>
-                <Card className="p-4 flex flex-col align-center">
-                  <h1>Material-Tailwind</h1>
-                  <Progress value={80} />
-                </Card>
-                <Card className="p-4 flex flex-col align-center">
-                  <h1>Ant-Design</h1>
-                  <Progress value={90} />
-                </Card>
-                <Card className="p-4 flex flex-col align-center">
-                  <h1>Bootstrap</h1>
-                  <Progress value={90} />
-                </Card>
-                <Card className="p-4 flex flex-col align-center">
-                  <h1>UiKit</h1>
-                  <Progress value={90} />
-                </Card>
-                <Card className="p-4 flex flex-col align-center">
-                  <h1>Zustand</h1>
-                  <Progress value={100} />
-                </Card>
-                <Card className="p-4 flex flex-col align-center">
-                  <h1>React-query</h1>
-                  <Progress value={70} />
-                </Card>
-                <Card className="p-4 flex flex-col align-center">
-                  <h1>React-Hool-Form</h1>
-                  <Progress value={70} />
-                </Card>
+           
+            <div
+              className="max-w-[1200px] mx-auto flex flex-col justify-center px-4 text-gray-200 pb-8 md:py-12"
+              id="skills"
+            >
+              <h2 className="text-3xl font-bold mb-4 text-center">Skills</h2>
+              <p className="text-center mb-8">
+                The Tech's and Libraries I use, and have expirience with:
+              </p>
 
-                <Card className="p-4 flex flex-col align-center">
-                  <h1>Axios</h1>
-                  <Progress value={100} />
-                </Card>
-              </DialogBody>
-
-              <DialogFooter>
-                <Button variant="outlined" onClick={handleOpen}>
-                  <span>Close</span>
-                </Button>
-              </DialogFooter>
-            </Dialog>
+              <div className="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-8">
+                {skills.map((skill, index) => (
+                  <div
+                    key={index}
+                    className="border border-purple-900 p-6 rounded-lg bg-purple-900/20 shadow-lg w-full md:w-1/2"
+                  >
+                    <h3 className="text-xl font-bold mb-4 text-center">
+                      {skill.category}
+                    </h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      {skill.technologies.map((tech, idx) => (
+                        <div key={idx} className="flex items-center space-x-4">
+                          <span className="text-3xl">{tech.icon}</span>
+                          <span className="text-lg">{tech.name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
           <div className="projects" id="projects">
             <h1>{t("projectTitle")}</h1>
