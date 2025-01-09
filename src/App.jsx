@@ -23,9 +23,9 @@ import {
 import { FaNodeJs } from "react-icons/fa";
 import { SiNestjs, SiExpress, SiTypescript, SiAxios } from "react-icons/si";
 import { IoLogoGithub } from "react-icons/io";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Aos from "aos";
-import * as PIXI from 'pixi.js';
-import Matrix from "./components/matrix";
 
 
 export default function App() {
@@ -167,6 +167,8 @@ export default function App() {
   ];
   // prikol
 
+  Aos.init()
+
   
   return (
     <>
@@ -192,7 +194,6 @@ export default function App() {
           </div>
           <div className="about" id="about">
             <div
-              data-aos="fade-down"
               className=" mx-auto flex flex-col justify-center px-4 text-gray-200 pb-8 md:py-12"
               id="skills"
             >
@@ -204,6 +205,8 @@ export default function App() {
               <div className="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-8">
                 {skills.map((skill, index) => (
                   <div
+                    data-aos="fade-up"
+                    data-aos-delay="100"
                     key={index}
                     className="border border-green-900 p-6 rounded-lg bg-green-900/20 shadow-lg w-full md:w-1/2"
                   >
@@ -226,7 +229,7 @@ export default function App() {
           <div className="projects" id="projects">
             <h1>{t("projectTitle")}</h1>
             <div className="grid">
-              <a href="https://projectvw1.netlify.app/">
+              <a data-aos="fade-right" href="https://projectvw1.netlify.app/">
                 <div className="card">
                   <img src="/al-chiroq.png" alt="" />
                   <div className="txt">
@@ -235,7 +238,7 @@ export default function App() {
                   </div>
                 </div>
               </a>
-              <a href="https://porschevw1w.netlify.app/">
+              <a data-aos="fade-left" data-aos-delay="400" href="https://porschevw1w.netlify.app/">
                 <div className="card">
                   <img src="/porche.png" alt="" />
                   <div className="txt">
@@ -244,7 +247,7 @@ export default function App() {
                   </div>
                 </div>
               </a>
-              <a href="https://find-lyrics-sr.netlify.app/">
+              <a data-aos="fade-right" href="https://find-lyrics-sr.netlify.app/">
                 <div className="card">
                   <img src="/image.png" alt="" />
                   <div className="txt">
@@ -253,7 +256,7 @@ export default function App() {
                   </div>
                 </div>
               </a>
-              <a href="https://find-lyrics-sr.netlify.app/">
+              <a data-aos="fade-left" data-aos-delay="400" href="https://find-lyrics-sr.netlify.app/">
                 <div className="card">
                   <img src="/music.png" alt="" />
                   <div className="txt">
@@ -267,7 +270,7 @@ export default function App() {
           <div className="contact" id="contact">
             <h1>{t("contactTitle")}</h1>
             <div className="low">
-              <div className="info">
+              <div data-aos='fade-down' className="info">
                 <h2>{t("social")}</h2>
                 <ul className="flex m-4 text-2xl gap-4">
                   <li>
@@ -296,7 +299,7 @@ export default function App() {
                   </li>
                 </ul>
               </div>
-              <div className="tgbot">
+              <div data-aos='fade-up' className="tgbot">
                 <h2>{t("heart")}</h2>
                 <form onSubmit={() => sendMessage()}>
                   <Input
@@ -343,7 +346,7 @@ export default function App() {
               </div>
             </div>
           </div>
-          <Footer />
+          <Footer data-aos="fade-up" />
         </>
       )}
     </>
