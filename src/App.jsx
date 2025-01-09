@@ -177,7 +177,7 @@ export default function App() {
 
       {animation ? (
         <video
-          src="../src/assets/intro.mp4"
+          src="/intro.mp4"
           autoPlay
           muted
           style={{ width: "100%", height: "auto" }}
