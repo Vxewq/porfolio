@@ -22,10 +22,10 @@ body {
   background: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0) 0%,
-      rgb(0, 0, 0) 100%
+      rgba(0, 0, 0, 1) 67%
     ),
     url("../src/assets/bg.jpeg");
-  background-attachment: fixed;
+  // background-attachment: fixed;
   background-position: left center;
   background-size: cover;
   .showcase {
@@ -35,7 +35,7 @@ body {
     flex-direction: row;
     padding: 100px 0;
     color: #fff;
-    height: 90vh;
+    height: 80vh;
 
     .info {
       text-align: center;
@@ -46,13 +46,7 @@ body {
       flex-direction: column;
       align-items: start;
       justify-content: start;
-      color: #ffffff9b;
-      transition: 0.4s;
-
-      &:hover {
-        color: white;
-        transform: scale(1.1);
-      }
+      color: white;
       h1 {
         font-family: "Chakra Petch";
         font-size: 48px;
@@ -63,46 +57,32 @@ body {
         font-size: 18px;
         width: 80%;
       }
+      .animate-away {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
     }
   }
 }
+
 .about {
   width: 90%;
   margin: 40px auto;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   color: white;
   padding: 30px;
   border-radius: 20px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, black 80%) h1 {
-    font-size: 40px;
-    font-family: "Chakra Petch";
-    font-weight: 600;
-  }
-  .card {
-    width: 400px;
-    color: black;
-    padding: 30px;
-    font-size: 20px;
-  }
-  .edu {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    h3 {
-      font-size: 25px;
-      font-weight: 500;
-      font-family: "Josefin Sans";
-    }
-    .prog {
-      color: white;
-      background: #555555;
-      .flex {
-        background: white;
-      }
+  #skills{
+    h2{
+      font-size: 36px;
+      color: green;
+      font-family: "Chakra Petch";
+
     }
   }
+  
 }
 .projects {
   width: 90%;
@@ -118,12 +98,15 @@ body {
   }
   .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     .card {
       display: flex;
       flex-direction: column;
       gap: 10px;
+      img{
+        height: 300px;
+      }
       h3 {
         font-size: 20px;
         font-weight: 500;
@@ -141,6 +124,7 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  color: green;
   h1 {
     font-family: "Chakra Petch";
     font-size: 40px;
@@ -176,11 +160,16 @@ body {
         font-size: 20px;
       }
       form {
+        color: green;
         display: flex;
         flex-direction: column;
         gap: 20px;
+        
         input {
           padding: 20px;
+          border: 1px solid green;
+          color: green;
+          
         }
       }
     }

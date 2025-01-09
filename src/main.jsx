@@ -7,6 +7,8 @@ import { ThemeProvider } from "@material-tailwind/react";
 import { ToastContainer } from "react-toastify";
 import i18n from "./utils/i18n";
 import { I18nextProvider } from "react-i18next";
+// import Aos from "aos";
+// Aos.init();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <ThemeProvider>

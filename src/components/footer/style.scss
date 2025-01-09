@@ -1,50 +1,25 @@
-.container-all{
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(16,28,40,1) 100%);
-
-.footer {
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  gap: 90px;
-  .teamates {
-    h1 {
-      font-family: "Chakra Petch";
-      font-size: 40px;
-      text-align: left;
-    }
-    .gid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      align-content: stretch;
-      .card {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        p {
-          text-align: justify;
-        }
-        .button {
-          // display: block;
-          align-self: flex-end;
-          justify-self: end;
-        }
-      }
-    }
-  }
-  .end {
-
-    padding: 90px;
-    width: 100%;
+.container-all {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 56%),
+    url("/src/assets/bg.jpeg");
+    background-repeat: no-repeat;
+    height: 40vh;
     display: flex;
-    flex-direction: column;
+    // background-attachment: fixed;
+    background-position: center -100px;
+    background-size: cover;
+
+  .footer {
+    color: green;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
     align-items: center;
-    color: white;
+    text-align: center;
+    margin: 40px auto;
+
+    // gap: 10px;
     h1 {
       font-family: "Josefin Sans";
       font-size: 40px;
@@ -57,17 +32,19 @@
       font-weight: bold;
       font-family: "Chakra Petch";
     }
+    display: flex;
+    flex-direction: column;
+    align-items: start;
   }
 }
-}
 @media (max-width: 768px) {
-  .container-all{
+  .container-all {
     .footer {
-        .teamates {
-          .gid {
-            grid-template-columns: 1fr;
-          }
+      .teamates {
+        .gid {
+          grid-template-columns: 1fr;
         }
       }
+    }
   }
 }

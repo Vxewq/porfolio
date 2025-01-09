@@ -10,15 +10,21 @@
   },
   "dependencies": {
     "@material-tailwind/react": "2.1.8",
+    "aos": "^2.3.4",
+    "gsap": "^3.12.5",
     "i18n": "^0.15.1",
     "i18next": "^23.12.1",
+    "particles.js": "^2.0.0",
+    "pixi.js": "^8.6.6",
     "react": "18.2.0",
     "react-animated-cursor": "^2.11.2",
     "react-dom": "18.2.0",
     "react-i18next": "^14.1.2",
     "react-icons": "^5.4.0",
+    "react-scroll": "^1.9.0",
     "react-toastify": "^10.0.5",
     "sass": "^1.77.6",
+    "scrollreveal": "^4.0.9",
     "use-react-countries": "^2.0.1"
   },
   "devDependencies": {
